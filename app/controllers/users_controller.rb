@@ -4,7 +4,8 @@ class UsersController < ApiController
 
 	# create without ! will return boolean
 	# create with ! will return user or error
-	def index
+	def home
+		
 	end
 
 	def create
