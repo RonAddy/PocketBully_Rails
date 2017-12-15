@@ -2,7 +2,8 @@
 # any actions done to database should be done in model
 
 class User < ApplicationRecord
-	validates_uniqueness _of :username
+	validates_uniqueness_of :username
+	attr_reader :fname
 	
 	# first method given by bcrypt to handle password hashing
 	# refer to monsters app for detailed look at sessions auth
@@ -14,7 +15,7 @@ class User < ApplicationRecord
 	# not for instances of user class!
 	# authenticate method given by Bcrypt
 	
-	#makes use of bcrypt autnenticate mthod to match hashed password__digest with password attempt
+	#makes use of bcrypt autnenticate method to match hashed password__digest with password attempt
 	def self.validate_login(username, password)
 		user = find_by(username: username)
 		if user && user.authenticate(password)

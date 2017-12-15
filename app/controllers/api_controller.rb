@@ -6,7 +6,7 @@ class ApiController < ApplicationController
 		authenticate_token || render_unauthorized("Access Denied")
 	end
 	
-	# will be assigned user if nil, preventing mutliple calls to the database everytime user needs to be authorized
+	# will be assigned user if nil, preventing mutliple calls to the database everytime user needs to be authorized.
 	def current_user
 		@current_user ||= authenticate_token
 	end
