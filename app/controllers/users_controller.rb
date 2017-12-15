@@ -1,12 +1,12 @@
 # This controller will also inherit from the ApiController
 class UsersController < ApiController
-	before_action :require_login, except: [:create]
+	before_action :require_login, except: [:create, :index]
 
 	# create without ! will return boolean
 	# create with ! will return user or error
 	def index
 	end
-	
+
 	def create
 		user = User.create!(user_params)
 		render json:{token: user.auth_token}
