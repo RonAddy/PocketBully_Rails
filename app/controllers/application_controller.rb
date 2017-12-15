@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
 	include ActionController::HttpAuthentication::Token::ControllerMethods
 
 	def index
-		render :index
+		# render :index
 	end
 
 end
