@@ -4,10 +4,6 @@ class UsersController < ApiController
 
 	# create without ! will return boolean
 	# create with ! will return user or error
-
-	def index
-	end
-	
 	def create
 		user = User.create!(user_params)
 		render json:{token: user.auth_token}
