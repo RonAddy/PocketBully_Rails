@@ -5,7 +5,7 @@ class UsersController < ApiController
 	# create without ! will return boolean
 	# create with ! will return user or error
 	def home
-
+		render json: {status: 202, head: 'ok' }
 	end
 
 	def create
