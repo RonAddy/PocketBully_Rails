@@ -1,10 +1,12 @@
 # This controller will be used for reference by other controllers inheriting it's methods
+# This controller is needed to make the auth methods private
 class ApiController < ApplicationController
 	
 	def require_login
 		authenticate_token || render_unauthorized("Access Denied")
 	end
 	
+	# will be assigned user if nil, preventing mutliple calls to the database everytime user needs to be authorized
 	def current_user
 		@current_user ||= authenticate_token
 	end
