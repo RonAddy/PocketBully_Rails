@@ -1,11 +1,11 @@
 # This controller will also inherit from the ApiController
 class UsersController < ApiController
-	before_action :require_login, except: [:create, :index]
+	before_action :require_login, except: [:create, :home]
 
 	# create without ! will return boolean
 	# create with ! will return user or error
 	def home
-		
+
 	end
 
 	def create
